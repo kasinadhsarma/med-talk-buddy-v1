@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional, Dict
@@ -7,7 +7,6 @@ import uuid
 import logging
 import uvicorn
 import google.generativeai as genai
-# No longer need functions_framework for Vercel
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -167,6 +166,3 @@ async def get_conversation_history(conversation_id: str):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
-    
-# For Vercel, we don't need a special entrypoint
-# The app variable will be automatically used

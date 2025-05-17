@@ -11,4 +11,3 @@ sentencepiece==0.1.99
 firebase-admin==5.0.0
 tqdm==4.65.0
 google-generativeai==0.3.2
-# No need for Firebase Functions dependencies for Vercel
